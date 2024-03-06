@@ -1,0 +1,37 @@
+so basically we learn the concept of middleware
+ use case of middleware is used in the place of
+ 1. auth checks
+ 2. ensure if the input given by the user is valid.
+
+
+ when we try to do a process in the backensd we validate the users and their inputs
+ but we need to do this for all get, put and post requests
+ hence the  code gets duplicated and looks llong
+ and increases the routes
+
+
+ 
+ hence we here use the concept of middleware
+
+
+ 1. count the number of requests
+ 2. find the average time taken for server to handle requests.
+
+
+
+------------------------------------------------------------------------------------------------------
+zod is an input validator usually a library 
+-------------------------------------------------------------------------------------------------------
+Authentication
+so for authenticating each route we need to send the 
+1. username
+2. email
+to all headers, hence this makes the whole process compicated.
+
+xxxxxxxxxxxx
+
+Hence we use authentication, where we basically login once and the server returns a TOKEN which gets stored in browser
+. This token then used as a replacement of authenticating using email and password;
+
+------------------------------------------------------
+zod  ----> middleware ---> globalwatches
