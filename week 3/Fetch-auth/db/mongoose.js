@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://admin:Sriram100@cluster0.x7vsasi.mongodb.net/Users")
+mongoose.connect("")
 
 //
 const cat = mongoose.model('Users',{
