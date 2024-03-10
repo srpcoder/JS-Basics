@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let timeout;
+    function debouncepopdiv(){
+        clearTimeout(timeout);
+        timeout = setTimeout(popdiv(),1000)
+    }
+
+  function popdiv(){
+    const a =  document.getElementById("a").value
+    const b =  document.getElementById("b").value
+
+    const element = document.getElementById("finalsum");
+    console.log(element)
+    // element.innerHTML = "Sum is "+ (parseInt(a) + parseInt(b))
+    fetch("http://localhost:3000/sum?a="+a+"&b="+b)
+    .then(function(response){
+      response.text()
+      .then(function(ans){
+        element.innerHTML = ans;
+      })
+    })
+    
+    
+  }
+
+</script>
+<style>
+    #container1{
+        background-color: red;
+        font-size: 30px;
+        padding: 20px;
+    }
+</style>
+<body>
+  <input oninput="debouncepopdiv()" type="number" placeholder="First Number" id = "a"> </input> <br></br>
+  <input  oninput="debouncepopdiv()" type="number" placeholder="Second Number" id = "b"> </input> <br></br>
+  
+  <div id = "finalsum"></div>
+
+   
+    
+
+    
+
+</body>
+</html>
