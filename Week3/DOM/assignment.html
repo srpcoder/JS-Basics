@@ -1,0 +1,27 @@
+<html>
+    <script>
+        function calculate(){
+            const principal = document.getElementById("Principal").value;
+            const rate = document.getElementById("Rate").value;
+            const time = document.getElementById("Time").value;
+            fetch("https://sum-server.100xdevs.com/interest?principal="+principal+"&rate="+rate+"&time="+time)
+            .then(function(response){
+                response.text()
+                .then(function(ans){
+                    document.getElementById("ans").innerHTML = ans;
+                })
+            })
+
+
+        }
+    </script>
+    <body>
+        <input type="number" id = "Principal" placeholder="Principal"> <br></body><br>
+        <input type="number" id = "Rate" placeholder="Rate of Interest"> <br></body><br>
+        <input type="number" id = "Time" placeholder="Time"> <br></body><br>
+        <button onclick="calculate()">Calculate</button>
+        <div id = "ans"></div>
+
+
+    </body>
+</html>
